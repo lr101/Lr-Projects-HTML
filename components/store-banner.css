@@ -1,0 +1,24 @@
+.store-banner-store-banner {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.store-banner-link {
+  display: contents;
+}
+.store-banner-image {
+  width: 135px;
+  object-fit: cover;
+  text-decoration: none;
+}
+.store-banner-link1 {
+  display: contents;
+}
+.store-banner-image1 {
+  width: 135px;
+  object-fit: cover;
+  margin-left: var(--dl-space-space-halfunit);
+  text-decoration: none;
+}
+
