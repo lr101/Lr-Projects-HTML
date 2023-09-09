@@ -1,0 +1,34 @@
+.white-button-container {
+  display: flex;
+  position: relative;
+}
+.white-button-link {
+  margin: var(--dl-space-space-unit);
+  padding: var(--dl-space-space-unit);
+  font-size: 0.75rem;
+  transition: 0.3s;
+  border-width: 0px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.white-button-link:hover {
+  transform: scale(1.02);
+}
+
+
+
+
+@media(max-width: 1600px) {
+  .white-button-link {
+    font-size: 0.75rem;
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+@media(max-width: 479px) {
+  .white-button-link {
+    margin: var(--dl-space-space-unit);
+  }
+}

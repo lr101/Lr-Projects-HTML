@@ -20,7 +20,7 @@
     </style>
     <style data-tag="default-style-sheet">
       html {
-        font-family: Inter;
+        font-family: Merriweather;
         font-size: 16px;
       }
 
@@ -46,11 +46,18 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script:wght@400&amp;display=swap"
       data-tag="font"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div>
-      <link href="./home.css" rel="stylesheet" />
+      <link href="./index.css" rel="stylesheet" />
 
       <div class="home-container">
         <div data-role="Header" class="header-container-header-container">
@@ -431,14 +438,14 @@
               <div class="stats-card-container">
                 <img alt="image" src="public/01.svg" class="stats-card-image" />
                 <div class="stats-card-container1">
-                  <h1 class="Headline4"><span>100+</span></h1>
+                  <h1 id="pins" class="Headline4"><span>100+</span></h1>
                   <span class="Body1"><span>Google Downloads</span></span>
                 </div>
               </div>
               <div class="stats-card-container">
                 <img alt="image" src="public/04.svg" class="stats-card-image" />
                 <div class="stats-card-container1">
-                  <h1 class="Headline4"><span>100+</span></h1>
+                  <h1 id="pins" class="Headline4"><span>100+</span></h1>
                   <span class="Body1"><span>Apple Downloads</span></span>
                 </div>
               </div>
@@ -447,14 +454,14 @@
               <div class="stats-card-container">
                 <img alt="image" src="public/05.svg" class="stats-card-image" />
                 <div class="stats-card-container1">
-                  <h1 class="Headline4"><span>4000+</span></h1>
+                  <h1 id="pins" class="Headline4"><span>4000+</span></h1>
                   <span class="Body1"><span>Sticker</span></span>
                 </div>
               </div>
               <div class="stats-card-container">
                 <img alt="image" src="public/07.svg" class="stats-card-image" />
                 <div class="stats-card-container1">
-                  <h1 class="Headline4"><span>15+</span></h1>
+                  <h1 id="pins" class="Headline4"><span>15+</span></h1>
                   <span class="Body1"><span>Gruppen</span></span>
                 </div>
               </div>
@@ -475,8 +482,13 @@
                 </div>
               </a>
               <span class="home-text15">
-                Oder schreibe uns eine Mail mit Ideen an:
-                lr.dev.projects@gmail.com
+                <span>Oder schreibe uns eine Mail mit Ideen an:</span>
+                <a
+                  href="mailto:lr.dev.projects@gmail.com?subject=Anfrage Stick-It App / Sticker"
+                  class="home-link"
+                >
+                  lr.dev.projects@gmail.com
+                </a>
               </span>
             </div>
             <div class="home-container17">
@@ -550,6 +562,20 @@
         </div>
       </div>
     </div>
-    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts">
+      async function getapi(url) {
+
+          // Storing response
+          const response = await fetch("https://app.lr-projects.de/public/api/infos");
+
+          // Storing data in form of JSON
+          var data = await response.json();
+          console.log(data);
+          document.getElementById("users").innerHTML = data.num-users;
+          document.getElementById("groups").innerHTML = data.num-groups;
+          document.getElementById("pins").innerHTML = data.num-pins;
+      }
+       getapi()
+    </script>
   </body>
 </html>

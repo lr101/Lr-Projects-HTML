@@ -20,7 +20,7 @@
     </style>
     <style data-tag="default-style-sheet">
       html {
-        font-family: Inter;
+        font-family: Merriweather;
         font-size: 16px;
       }
 
@@ -46,6 +46,13 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script:wght@400&amp;display=swap"
       data-tag="font"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -256,9 +263,18 @@
                   Auf Etsy anzeigen
                 </a>
               </div>
-              <span>
-                Buffed Mona Lisa Outdoor Aufkleber mit freier Schnittform
-                (heraushängender Arm an der Unterseite).
+              <span class="Body1 sticker-text2">
+                Der Mona Sticker, auch bekannt als Buff Lisa, entstand während
+                des Lockdowns durch eine Reihe von Photoshop-Battles. Was
+                zunächst als humorvolle Ablenkung begann, entwickelte sich
+                allmählich zum beliebten Profilbild unserer Discord-Gruppe und
+                schließlich zum Markenzeichen unseres Studiengangs. Die präzise
+                Freischnittform des Stickers ist von großer Bedeutung, um den
+                beeindruckenden Bizeps gut betrachten zu können. Es ist
+                erstaunlich, wie sich ein Spaßprojekt zu einem Symbol der
+                Gemeinschaft entwickelt hat, das uns alle miteinander verbindet
+                und uns stolz auf unsere Verbundenheit als Studierende macht. -
+                ChatGPT
               </span>
             </div>
           </div>
@@ -278,9 +294,16 @@
                   Auf Etsy anzeigen
                 </a>
               </div>
-              <span>
-                Tornado DaVinci Outdoor Din A8 Aufkleber mit geschlitzter
-                Rückseite
+              <span class="sticker-text4">
+                Der Sticker "Tornado Da Vinci" ist eine Hommage an Leonardo Da
+                Vinci und sich ein Bier einzuverleiben. Ironischerweise entstand
+                die Idee für diesen Sticker aufgrund eines bisher unvollendeten
+                Films gleichen Namens. Obwohl der Film nie fertiggestellt wurde,
+                hat der Sticker "Tornado Da Vinci" einen beeindruckenden
+                Siegeszug angetreten und sich mittlerweile über die ganze Welt
+                verbreitet. Er ist zu unserem bekanntesten Werk geworden und
+                symbolisiert die Kombination aus Kreativität, Wissensdurst und
+                Genuss, die uns als Gemeinschaft antreibt. - CharGPT
               </span>
             </div>
             <img
@@ -350,6 +373,20 @@
         />
       </div>
     </div>
-    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts">
+      async function getapi(url) {
+
+          // Storing response
+          const response = await fetch("https://app.lr-projects.de/public/api/infos");
+
+          // Storing data in form of JSON
+          var data = await response.json();
+          console.log(data);
+          document.getElementById("users").innerHTML = data.num-users;
+          document.getElementById("groups").innerHTML = data.num-groups;
+          document.getElementById("pins").innerHTML = data.num-pins;
+      }
+       getapi()
+    </script>
   </body>
 </html>
