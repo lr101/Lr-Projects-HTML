@@ -578,9 +578,9 @@
           // Storing data in form of JSON
           var data = await response.json();
           console.log(data);
-          document.getElementById("users").innerHTML = data.num-users;
-          document.getElementById("groups").innerHTML = data.num-groups;
-          document.getElementById("pins").innerHTML = data.num-pins;
+          document.getElementById("users").innerHTML = data["num-users"];
+          document.getElementById("groups").innerHTML = data["num-groups"];
+          document.getElementById("pins").innerHTML = data["num-pins"];
       }
        getapi()
     </script>
