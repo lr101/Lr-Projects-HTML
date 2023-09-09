@@ -566,7 +566,7 @@
       async function getapi() {
 
           // Storing response
-          const response = await fetch("https://app.lr-projects.de/public/api/infos", {mode: 'cors', method: 'GET'});
+          const response = await fetch("https://lr-projects.de/api/infos", {mode: 'cors', method: 'GET'});
           console.log(response)
           // Storing data in form of JSON
           var data = await response.json();
