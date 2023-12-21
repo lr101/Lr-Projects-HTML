@@ -516,20 +516,21 @@
     </div>
   </div>
 </div>
-<script src="https://unpkg.com/@teleporthq/teleport-custom-scripts">
-  async function getapi(url) {
+<script type="text/javascript">
+  async function getapi() {
 
     // Storing response
-    const response = await fetch("https://app.lr-projects.de/../public/api/infos");
-
+    const response = await fetch("https://lr-projects.de/api/infos", {mode: 'no-cors', method: 'GET'});
+    console.log(response)
     // Storing data in form of JSON
     var data = await response.json();
     console.log(data);
-    document.getElementById("users").innerHTML = data.num-users;
-    document.getElementById("groups").innerHTML = data.num-groups;
-    document.getElementById("pins").innerHTML = data.num-pins;
+    document.getElementById("users").innerHTML = data["num-users"];
+    document.getElementById("groups").innerHTML = data["num-groups"];
+    document.getElementById("pins").innerHTML = data["num-pins"];
   }
   getapi()
 </script>
+<script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
 </body>
 </html>
